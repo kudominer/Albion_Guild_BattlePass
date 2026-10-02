@@ -6,8 +6,8 @@ export default function DiscordRegisterModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  // Discord Guild Link (TNC Guild ID: 712258265769050164)
-  const DISCORD_LINK = 'https://discord.gg/tnc-albion'; // Hoặc https://discord.com/channels/712258265769050164
+  // Discord Guild Link (TNC Guild ID: 712258265769050164 / Event Channel: 1555531659716198491)
+  const DISCORD_LINK = 'https://discord.com/channels/712258265769050164/1555531659716198491';
 
   const TEMPLATE_SYNTAX = `In-game ID: [Tên nhân vật của bạn]
 Loại Vũ Khí đăng ký: [VD: Holy Staff / Axe / Mace / ...]
