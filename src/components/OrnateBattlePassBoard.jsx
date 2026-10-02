@@ -27,7 +27,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
             </div>
           </div>
           <div>
-            <div className="font-game text-sm font-black tracking-widest text-amber-300">ALBION ONLINE</div>
+            <div className="font-display font-black text-sm tracking-widest text-amber-300">ALBION ONLINE</div>
             <div className="text-[10px] font-semibold text-slate-400 uppercase">TNC GUILD · BAN TỔ CHỨC GUILD TNC</div>
           </div>
         </div>
@@ -35,10 +35,28 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
         {/* Right: Registration & Season Badge */}
         <div className="px-3.5 py-1.5 rounded-full bg-black/70 border border-amber-500/40 text-xs flex items-center gap-2 shadow-lg backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-          <span className="font-game font-bold text-amber-300">ZERO to HERO</span>
+          <span className="font-display font-black text-amber-300">ZERO to HERO</span>
           <span className="text-slate-400 text-[11px]">| Hạn đăng ký: Hết ngày 04/10/2026</span>
         </div>
 
+      </div>
+
+      {/* 🌟 GIANT TOP MISSION BANNER ĐẬP VÀO MẮT NGAY ĐẦU TRANG */}
+      <div className="my-3 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#20150d] via-[#321f10] to-[#20150d] border-2 border-amber-400 shadow-[0_0_35px_rgba(234,179,8,0.4)] relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-2xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div className="relative z-10 flex flex-col items-center justify-center gap-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/60 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+            <span className="animate-pulse text-sm">⚔️</span>
+            <span>THÔNG ĐIỆP TỪ BAN TỔ CHỨC GUILD TNC</span>
+            <span className="animate-pulse text-sm">⚔️</span>
+          </div>
+
+          <h2 className="text-base sm:text-lg md:text-xl font-black text-amber-200 tracking-wide max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            "Sự kiện dành cho <span className="text-yellow-300 underline decoration-amber-400 decoration-2 underline-offset-4">Newbie dưới 100m Total fame</span> để khích lệ Newbie tìm hiểu game, tham gia content và đồng hành cùng <span className="text-amber-300 font-extrabold">TNC</span> trên những chặng đường sắp tới."
+          </h2>
+        </div>
       </div>
 
       {/* Main Ornate Carved Wooden Board (Chuẩn 100% theo ảnh thiết kế mẫu) */}
@@ -53,23 +71,15 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
         {/* Top Header Arch / Crown */}
         <div className="text-center relative z-10 mb-6 sm:mb-8">
           <div className="inline-block relative">
-            <div className="text-[11px] sm:text-xs font-game tracking-[0.25em] text-amber-300 font-extrabold uppercase mb-0.5 drop-shadow">
+            <div className="text-[11px] sm:text-xs font-display tracking-[0.25em] text-amber-300 font-black uppercase mb-0.5 drop-shadow">
               ✦ SỰ KIỆN CÀY FAME ZERO TO HERO ✦
             </div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-game font-black tracking-wider gold-text-gradient uppercase">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-wider gold-text-gradient uppercase">
               SỔ TAY TU LUYỆN
             </h1>
           </div>
           
-          {/* Slogan & Newbie Mission Statement */}
-          <div className="mt-2.5 max-w-2xl mx-auto px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-amber-500/25 to-amber-500/10 border border-amber-400/40 shadow-sm flex items-center justify-center gap-2">
-            <span className="text-sm">🛡️</span>
-            <p className="text-[11px] sm:text-xs text-amber-200 font-semibold tracking-wide drop-shadow">
-              Dành cho <strong>Newbie &lt; 100M Total Fame</strong> · Khích lệ tìm hiểu game, tham gia content & đồng hành cùng <strong>TNC</strong>!
-            </p>
-          </div>
-
-          <p className="text-[11px] sm:text-xs text-amber-100/80 font-medium tracking-wide mt-2 drop-shadow px-2">
+          <p className="text-xs sm:text-sm text-amber-100/90 font-semibold tracking-wide mt-2 drop-shadow px-2">
             Hoàn thành nhiệm vụ — Nâng cấp Giao Kèo — Nhận phần thưởng giá trị
           </p>
         </div>
@@ -86,10 +96,10 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               className="group cursor-pointer rounded-2xl p-4 bg-black/40 border border-amber-500/30 hover:border-amber-400/80 transition-all hover:bg-black/60 relative flex flex-col justify-between"
             >
               <div className="text-center mb-2">
-                <div className="text-[10px] font-game font-bold text-amber-400/90 uppercase tracking-wider">
+                <div className="text-[10px] font-display font-bold text-amber-400/90 uppercase tracking-wider">
                   KHU VỰC 1:
                 </div>
-                <div className="text-xs font-bold text-white uppercase font-game">
+                <div className="text-xs font-black text-white uppercase font-display tracking-wide">
                   HÀNH TRÌNH KHỞI ĐẦU
                 </div>
                 <div className="text-[11px] font-extrabold text-amber-300">
@@ -127,10 +137,10 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               className="group cursor-pointer rounded-2xl p-4 bg-black/40 border border-amber-500/30 hover:border-amber-400/80 transition-all hover:bg-black/60 relative flex flex-col justify-between"
             >
               <div className="text-center mb-2">
-                <div className="text-[10px] font-game font-bold text-amber-400/90 uppercase tracking-wider">
+                <div className="text-[10px] font-display font-bold text-amber-400/90 uppercase tracking-wider">
                   KHU VỰC 2:
                 </div>
-                <div className="text-xs font-bold text-white uppercase font-game">
+                <div className="text-xs font-black text-white uppercase font-display tracking-wide">
                   CON ĐƯỜNG TINH HOA
                 </div>
                 <div className="text-[11px] font-extrabold text-amber-300">
@@ -174,10 +184,10 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               className="group cursor-pointer rounded-2xl p-4 bg-black/40 border border-amber-500/30 hover:border-amber-400/80 transition-all hover:bg-black/60 relative flex flex-col justify-between"
             >
               <div className="text-center mb-2">
-                <div className="text-[10px] font-game font-bold text-amber-400/90 uppercase tracking-wider">
+                <div className="text-[10px] font-display font-bold text-amber-400/90 uppercase tracking-wider">
                   KHU VỰC 3:
                 </div>
-                <div className="text-xs font-bold text-white uppercase font-game">
+                <div className="text-xs font-black text-white uppercase font-display tracking-wide">
                   TRANG BỊ VÔ SONG
                 </div>
                 <div className="text-[11px] font-extrabold text-amber-300">
@@ -217,10 +227,10 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
 
             <div className="space-y-1">
-              <div className="text-[11px] font-game font-bold text-amber-300 uppercase tracking-widest">
+              <div className="text-[11px] font-display font-bold text-amber-300 uppercase tracking-widest">
                 TỔNG GIẢI THƯỞNG:
               </div>
-              <div className="text-2xl sm:text-3xl font-black font-game gold-text-gradient">
+              <div className="text-2xl sm:text-3xl font-black font-display gold-text-gradient">
                 ≈ 600M SILVER
               </div>
               <p className="text-[10px] text-amber-200/80 leading-tight">
@@ -263,7 +273,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
             </div>
             
             <div>
-              <div className="text-xs font-bold text-amber-200 font-game tracking-wider">
+              <div className="text-xs font-black text-amber-200 font-display tracking-wider">
                 TIẾN ĐỘ SỰ KIỆN ZERO TO HERO
               </div>
               <div className="text-[11px] text-slate-400">
@@ -276,7 +286,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
           <div className="w-full sm:w-auto flex items-center gap-2.5">
             <button
               onClick={triggerCelebrate}
-              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 hover:from-yellow-400 hover:to-amber-400 text-slate-950 font-game font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-yellow-200 shadow-gold-glow hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 hover:from-yellow-400 hover:to-amber-400 text-slate-950 font-display font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-yellow-200 shadow-gold-glow hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-slate-950" />
               Đăng Ký Tham Gia (Gửi Discord)

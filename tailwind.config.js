@@ -23,7 +23,8 @@ export default {
         }
       },
       fontFamily: {
-        game: ['Cinzel', 'Trajan Pro', 'Georgia', 'serif'],
+        game: ['Cinzel', 'Montserrat', 'Inter', 'sans-serif'],
+        display: ['Montserrat', 'Inter', 'sans-serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {

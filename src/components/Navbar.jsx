@@ -32,8 +32,8 @@ export default function Navbar({ onOpenRegister, onOpenRules }) {
             </div>
             <div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-game text-base sm:text-xl font-bold tracking-wider gold-text-gradient">ZERO to HERO</span>
-                <span className="text-[9px] sm:text-[10px] px-2 py-0.5 bg-red-950/80 text-rose-300 border border-rose-600/40 rounded-full font-semibold uppercase tracking-wider">
+                <span className="font-display text-base sm:text-xl font-black tracking-wider gold-text-gradient">ZERO to HERO</span>
+                <span className="text-[9px] sm:text-[10px] px-2 py-0.5 bg-red-950/80 text-rose-300 border border-rose-600/40 rounded-full font-bold uppercase tracking-wider">
                   Guild TNC
                 </span>
               </div>

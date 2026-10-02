@@ -42,7 +42,7 @@ export default function App() {
             HẠN ĐĂNG KÝ: CHỈ NHẬN TRONG 3 NGÀY ĐẦU
           </div>
 
-          <h3 className="text-2xl sm:text-4xl font-game font-extrabold text-white">
+          <h3 className="text-2xl sm:text-4xl font-display font-black text-white">
             SẴN SÀNG THAM GIA ĐUA TOP CÙNG GUILD TNC?
           </h3>
 
