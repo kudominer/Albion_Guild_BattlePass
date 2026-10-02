@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Sparkles, BookOpen, Clock, ExternalLink, Flame } from 'lucide-react';
 
-export default function Navbar({ onOpenRegister, onOpenRules, scrollToSection }) {
-  // Countdown timer cho Event 10 ngày (01/10 - 11/10/2026)
-  const [timeLeft, setTimeLeft] = useState({ days: 8, hours: 14, minutes: 25, seconds: 40 });
+export default function Navbar({ onOpenRegister, onOpenRules }) {
+  // Countdown timer cho Hạn đăng ký (Hết ngày 04/10/2026)
+  const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 6, minutes: 12, seconds: 40 });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,22 +32,22 @@ export default function Navbar({ onOpenRegister, onOpenRules, scrollToSection })
             </div>
             <div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-game text-base sm:text-xl font-bold tracking-wider gold-text-gradient">GUILD TNC</span>
+                <span className="font-game text-base sm:text-xl font-bold tracking-wider gold-text-gradient">ZERO to HERO</span>
                 <span className="text-[9px] sm:text-[10px] px-2 py-0.5 bg-red-950/80 text-rose-300 border border-rose-600/40 rounded-full font-semibold uppercase tracking-wider">
-                  Fame Rush +25%
+                  Guild TNC
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Battle Pass Cày Fame · Tổng Giải 600M+ Silver</p>
+              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Sự kiện Cày Fame 600M+ Silver · BTC [TNC] Kudo2ten k2</p>
             </div>
           </div>
 
           {/* Navigation Links & Action */}
           <div className="flex items-center gap-2.5 sm:gap-4">
             
-            {/* Event Countdown */}
+            {/* Registration Countdown */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-xs">
               <Clock className="w-4 h-4 text-amber-400 animate-pulse" />
-              <span className="text-amber-200/80">Kết thúc sau:</span>
+              <span className="text-amber-200/80">Hạn đăng ký:</span>
               <span className="font-mono font-bold text-albion-gold">
                 {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
               </span>
@@ -59,7 +59,7 @@ export default function Navbar({ onOpenRegister, onOpenRules, scrollToSection })
               className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700/80 transition-all"
             >
               <BookOpen className="w-4 h-4 text-amber-400" />
-              <span>Chi Tiết Thể Lệ</span>
+              <span>Thể Lệ</span>
             </button>
 
             {/* Direct Discord Register Button */}

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Sparkles, Shield, Compass, ChevronRight, CheckCircle2, Flame, ExternalLink } from 'lucide-react';
+import { Sparkles, Shield, Compass, ChevronRight, CheckCircle2, Flame, ExternalLink, Calendar, Users } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
   const triggerCelebrate = () => {
     confetti({
-      particleCount: 100,
+      particleCount: 110,
       spread: 75,
       origin: { y: 0.6 },
       colors: ['#e5b842', '#fde047', '#e11d48', '#8b5cf6', '#10b981']
@@ -21,27 +21,27 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
         
         {/* Left: Albion Online Brand Badge */}
         <div className="flex items-center gap-2 drop-shadow-lg">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-red-800 p-0.5 shadow-gold-glow flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-600 to-red-800 p-0.5 shadow-gold-glow flex items-center justify-center shrink-0">
             <div className="w-full h-full bg-[#0d1322] rounded-[10px] flex items-center justify-center">
               <Shield className="w-5 h-5 text-albion-gold" />
             </div>
           </div>
           <div>
             <div className="font-game text-sm font-black tracking-widest text-amber-300">ALBION ONLINE</div>
-            <div className="text-[10px] font-semibold text-slate-400 uppercase">TNC GUILD · SỰ KIỆN FAME RUSH</div>
+            <div className="text-[10px] font-semibold text-slate-400 uppercase">TNC GUILD · BTC [TNC] KUDO2TEN K2</div>
           </div>
         </div>
 
-        {/* Right: Season Badge */}
+        {/* Right: Registration & Season Badge */}
         <div className="px-3.5 py-1.5 rounded-full bg-black/70 border border-amber-500/40 text-xs flex items-center gap-2 shadow-lg backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-          <span className="font-game font-bold text-amber-300">MÙA 1 - FAME RUSH +25%</span>
-          <span className="text-slate-400 text-[11px]">| Hạn đăng ký: 3 ngày đầu</span>
+          <span className="font-game font-bold text-amber-300">ZERO to HERO</span>
+          <span className="text-slate-400 text-[11px]">| Hạn đăng ký: Hết ngày 04/10/2026</span>
         </div>
 
       </div>
 
-      {/* Main Ornate Carved Wooden Board (Chuẩn 100% theo ảnh thiết kế) */}
+      {/* Main Ornate Carved Wooden Board (Chuẩn 100% theo ảnh thiết kế mẫu) */}
       <div className="ornate-wood-board rounded-3xl p-5 sm:p-8 md:p-10 border-4 border-[#936e2f] relative overflow-hidden">
         
         {/* Corner Rivet Ornaments */}
@@ -54,7 +54,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
         <div className="text-center relative z-10 mb-6 sm:mb-8">
           <div className="inline-block relative">
             <div className="text-[11px] sm:text-xs font-game tracking-[0.25em] text-amber-300 font-extrabold uppercase mb-0.5 drop-shadow">
-              ✦ BATTLE PASS ✦
+              ✦ SỰ KIỆN CÀY FAME ZERO TO HERO ✦
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-game font-black tracking-wider gold-text-gradient uppercase">
               SỔ TAY TU LUYỆN
@@ -203,7 +203,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
           </div>
 
           {/* Right 4 Columns: Giant Overflowing Silver Treasure Chest */}
-          <div className="md:col-span-4 p-5 rounded-2xl bg-gradient-to-b from-[#2a1b10]/90 via-[#1a110a]/95 to-[#0d0905] border-2 border-amber-500/60 shadow-2xl relative overflow-hidden flex flex-col items-center text-center justify-between min-h-[290px]">
+          <div className="md:col-span-4 p-5 rounded-2xl bg-gradient-to-b from-[#2a1b10]/90 via-[#1a110a]/95 to-[#0d0905] border-2 border-amber-500/60 shadow-2xl relative overflow-hidden flex flex-col items-center text-center justify-between min-h-[300px]">
             
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -214,8 +214,8 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               <div className="text-2xl sm:text-3xl font-black font-game gold-text-gradient">
                 ≈ 600M SILVER
               </div>
-              <p className="text-[10px] text-amber-200/70">
-                (Tổng ngân sách giải cho toàn thể thành viên)
+              <p className="text-[10px] text-amber-200/80 leading-tight">
+                Sau 3 ngày sẽ tính tổng số người đăng ký và 600M được chia đều cho từng người!
               </p>
             </div>
 
@@ -228,13 +228,14 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               <div className="absolute -bottom-2 -right-3 text-xl animate-flicker">🪙</div>
             </div>
 
-            {/* Quick Reward Highlight */}
-            <div className="w-full bg-[#0d0905]/95 p-3 rounded-xl border border-amber-500/40">
-              <div className="text-[11px] text-amber-300 font-bold">
-                25M - 30M Silver / Người (100 Điểm)
+            {/* Event Trao Thuong Timeline */}
+            <div className="w-full bg-[#0d0905]/95 p-3 rounded-xl border border-amber-500/40 space-y-1 text-left">
+              <div className="flex items-center gap-1.5 text-[10px] text-amber-300 font-bold">
+                <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                <span>Trao thưởng: Hết tháng 10/2026</span>
               </div>
-              <div className="text-[10px] text-slate-400 mt-0.5">
-                Heal x1.2 (30M) · Tank/Support x1.1 (27.5M)
+              <div className="text-[10px] text-slate-400">
+                Hạn mức tiêu chuẩn: <strong className="text-amber-300">25M - 30M Silver / Người</strong>
               </div>
             </div>
 
@@ -254,10 +255,10 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
             
             <div>
               <div className="text-xs font-bold text-amber-200 font-game tracking-wider">
-                TIẾN ĐỘ BATTLE PASS GUILD TNC
+                TIẾN ĐỘ SỰ KIỆN ZERO TO HERO
               </div>
               <div className="text-[11px] text-slate-400">
-                0 - 100 Điểm tương ứng 100% hạn mức Silver cá nhân
+                100 Điểm Battle Pass = 100% gói thưởng Silver cá nhân
               </div>
             </div>
           </div>

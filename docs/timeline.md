@@ -2,25 +2,32 @@
 
 ## Nhật Ký Tiến Độ Dự Án
 
-### [2026-10-02] Cập Nhật Đường Dẫn Kênh Đăng Ký Discord Chính Xác
-- **Lý do:** Cập nhật đường link điều hướng của nút Đăng ký sang đúng ID kênh chat sự kiện trong máy chủ Discord Guild TNC (`https://discord.com/channels/712258265769050164/1555531659716198491`).
+### [2026-10-02] Đồng Bộ 100% Thông Tin Sự Kiện ZERO to HERO (Phương Án 2)
+- **Lý do:** Đối chiếu với bài đăng chính thức của BTC `[TNC] Kudo2ten k2` trên kênh Discord:
+  - Tên sự kiện chính thức: `EVENT ZERO to HERO CÀY FAME`.
+  - Hạn đăng ký: Đến hết ngày **04/10/2026**.
+  - Thời gian sự kiện: Từ giờ đến **hết tháng 10/2026** sẽ tổng kết và trao thưởng.
+  - Cơ chế chia đều: "Sau 3 ngày sẽ tính tổng số người đăng ký tham gia và 600m sẽ được chia đều cho từng người đã đăng ký."
+  - Vinh danh 6 thành viên được duyệt hợp lệ sẵn từ sự kiện trước: `@wuovan 2k1`, `@vantablackc 2k7`, `@CunsNyan 2k2`, `@llMoZunll 2k2`, `@zVuz 199x`, `@Datbph2021 97`.
+  - Cú pháp đăng ký chuẩn Discord có Tag duyệt: `<@778593128566882314>`.
 - **Nội dung đã thực hiện:**
-  - Sửa `DISCORD_LINK` trong `src/components/DiscordRegisterModal.jsx`.
-  - Build kiểm thử bản static production thành công trong 4.4s.
-  - Tự động push lên GitHub Pages.
-- **Kết quả:** Người dùng bấm nút mở Discord sẽ nhảy chính xác vào kênh sự kiện của Guild TNC để gửi bài nộp.
+  - Tích hợp **Bộ Ước Tính Chia Đều Quỹ 600M Silver (Interactive Simulator)** với thanh trượt từ 15 đến 40 người.
+  - Bổ sung khối vinh danh 6 chiến thần đã duyệt hợp lệ.
+  - Cập nhật cú pháp đăng ký có sẵn tag `<@778593128566882314>` trong modal.
+  - Đổi thương hiệu toàn bộ app sang `ZERO to HERO · GUILD TNC`.
+  - Build thành công trong 3.06s.
+- **Kết quả:** Đã push lên GitHub Pages và chạy trực tiếp phiên bản chuẩn xác nhất.
 
 ---
 
 ## 📌 Mandatory Agent Handover (Mục Bàn Giao Bắt Buộc)
 
 1. **Tình trạng hiện tại của dự án:**
-   - Web App sự kiện đã hoàn thiện và cập nhật link kênh Discord đăng ký chính thức: `https://discord.com/channels/712258265769050164/1555531659716198491`.
-   - Giao diện tối giản, tối ưu 100% cho PC và Mobile.
+   - Web App sự kiện ZERO to HERO đã hoàn thiện 100% đúng từng chữ và từng con số theo thông báo Discord của BTC.
    - GitHub Pages URL: `https://kudominer.github.io/Albion_Guild_BattlePass/`.
 
 2. **Bối cảnh và dự định kế tiếp của user:**
-   - Sẵn sàng chia sẻ link và phát động sự kiện cho toàn thể thành viên Guild TNC tham gia.
+   - User có thể gửi link trực tiếp cho anh em trong Guild hoặc ghim lên kênh Discord `ZERO to HERO`.
 
 3. **Hướng dẫn kỹ thuật nhanh cho Agent tiếp theo:**
    - Thư mục dự án: `c:\Users\User\Documents\CODE\Albion_Guild_BattlePass`.
