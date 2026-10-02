@@ -2,34 +2,32 @@
 
 ## Nhật Ký Tiến Độ Dự Án
 
-### [2026-10-02] Triển Khai Giao Diện Sổ Tay Tu Luyện Hoàng Kim & Chế Độ Kép (Phương Án 2 + 3)
-- **Lý do:** Người dùng cung cấp thiết kế mẫu chuẩn Albion Online "BATTLE PASS - SỔ TAY TU LUYỆN" với bảng gỗ sồi khắc nổi, vương miện mạ vàng, 3 bục hào quang ma thuật, rương bạc khổng lồ 600M Silver và yêu cầu làm cả 2 chế độ (Showcase + Cinematic) kèm nút chuyển đổi.
+### [2026-10-02] Tối Giản Giao Diện Web Sự Kiện & Tích Hợp Đăng Ký Discord (Tối Ưu Mobile)
+- **Lý do:** Tinh giản trải nghiệm người dùng theo yêu cầu: Chuyển sang dạng Web Sự Kiện (Chỉ xem và chi tiết thể lệ), loại bỏ phần tự nhập spec phức tạp; tích hợp form mẫu sao chép cú pháp 1-click và điều hướng đăng ký trực tiếp sang Discord Guild TNC; tối ưu giao diện mượt mà 100% cho điện thoại.
 - **Nội dung đã thực hiện:**
-  - Xây dựng component `OrnateBattlePassBoard.jsx` tái hiện chính xác 100% bố cục mỹ thuật từ ảnh mẫu:
-    - Khu Vực 1: Hành Trình Khởi Đầu (48 điểm) với bục đá tỏa hào quang ma thuật vũ khí.
-    - Khu Vực 2: Con Đường Tinh Hoa (32 điểm) với 2 huân chương vàng 500 Spec (+16đ) & 800 Spec (+16đ).
-    - Khu Vực 3: Trang Bị Vô Song (20 điểm) với bục giáp hiệp sĩ hào quang lam (500 spec Giày/Mũ & 500 spec Áo).
-    - Rương Bạc Hoàng Kim Khổng Lồ (≈600M Silver) tự động tính Silver cá nhân theo hệ số nhánh (x1.2 / x1.1 / x1.0).
-    - Thanh tiến độ Giao Kèo hoàng kim dưới cùng với la bàn và nút Nâng Cấp.
-  - Xây dựng component `CinematicHud.jsx` phục vụ Chế độ Toàn Cảnh Cinematic Game HUD với pháo đài đêm, ánh nến lung linh và các thanh drawer trượt từ 2 bên.
-  - Tích hợp nút Toggle chuyển đổi `Sổ Tay Hoàng Kim` ↔ `Toàn Cảnh Cinematic` trên Navbar.
-  - Build kiểm thử thành công 100% không lỗi cú pháp.
-- **Kết quả:** Giao diện đạt độ hoàn thiện mỹ thuật cao cấp, chạy mượt mà và tự động deploy lên GitHub Pages.
+  - Giữ lại Bảng Sổ Tay Tu Luyện Hoàng Kim làm Hero Center theo đúng 100% thiết kế mẫu.
+  - Xây dựng component `EventDetailsGrid.jsx` hiển thị trực quan các thẻ:
+    - 3 Giải phụ đặc biệt: ⚡ 80đ sớm nhất (Shadowcaller 5.4), 👑 100đ sớm nhất (Vũ khí 8.3), 🌟 50đ đầu tiên mỗi nhánh (5M Silver).
+    - Bảng tính 100 điểm Battle Pass (48đ vũ khí lẻ + 32đ nhánh + 20đ trang bị).
+    - Hệ số ưu đãi nhánh: Heal x1.2 (30M), Tank/Support x1.1 (27.5M), Khác x1.0 (25M).
+  - Xây dựng modal `DiscordRegisterModal.jsx` với cú pháp chuẩn xác và nút sao chép 1-click + nút mở Discord trực tiếp.
+  - Bổ sung thanh Floating Action Bar cố định dưới đáy màn hình trên thiết bị di động.
+  - Tối ưu kích thước bundle giảm hơn 55% (từ 488kB xuống 208kB), tải trang tức thì.
+- **Kết quả:** Build thành công 100%, deploy tự động lên GitHub Pages.
 
 ---
 
 ## 📌 Mandatory Agent Handover (Mục Bàn Giao Bắt Buộc)
 
 1. **Tình trạng hiện tại của dự án:**
-   - Ứng dụng đã có đầy đủ 2 chế độ xem: **Sổ Tay Hoàng Kim** (Showcase + Chi tiết) và **Toàn Cảnh Cinematic** (Game HUD).
-   - Nút chuyển đổi View Mode được đặt tiện lợi trên thanh Navbar (cả Desktop và Mobile).
-   - Tương thích 100% với GitHub Pages qua pipeline GitHub Actions.
+   - Web App sự kiện đã được tối giản hoàn chỉnh theo phong cách Showcase Landing Page.
+   - Giao diện mượt mà trên cả PC lẫn Mobile.
+   - GitHub Pages URL: `https://kudominer.github.io/Albion_Guild_BattlePass/`.
 
 2. **Bối cảnh và dự định kế tiếp của user:**
-   - User có thể gửi đường link GitHub Pages cho anh em trong Guild trải nghiệm cả 2 giao diện.
+   - User có thể gửi link trực tiếp cho anh em trong Guild hoặc ghim lên kênh Discord thông báo sự kiện.
 
 3. **Hướng dẫn kỹ thuật nhanh cho Agent tiếp theo:**
    - Thư mục dự án: `c:\Users\User\Documents\CODE\Albion_Guild_BattlePass`.
-   - Component Bảng Hoàng Kim: `src/components/OrnateBattlePassBoard.jsx`.
-   - Component Cinematic HUD: `src/components/CinematicHud.jsx`.
-   - URL GitHub Pages: `https://kudominer.github.io/Albion_Guild_BattlePass/`.
+   - Chạy dev server: `npm run dev`.
+   - Build production: `npm run build`.
