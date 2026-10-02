@@ -33,6 +33,16 @@ export default function RulesModal({ isOpen, onClose }) {
         {/* Content */}
         <div className="space-y-5 max-h-[65vh] overflow-y-auto pr-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
           
+          {/* Mission Section */}
+          <div className="p-4 rounded-xl bg-gradient-to-r from-amber-950/70 via-[#101827] to-amber-950/70 border border-amber-500/50 space-y-1.5">
+            <h4 className="font-bold text-amber-300 uppercase text-xs flex items-center gap-1.5">
+              🤝 SỨ MỆNH & Ý NGHĨA SỰ KIỆN
+            </h4>
+            <p className="text-slate-200 text-xs leading-relaxed">
+              Sự kiện được Ban Tổ Chức Guild TNC phát động nhằm <strong>khích lệ toàn thể Newbie (Total Fame &lt; 100M) tìm hiểu sâu về game, tích cực tham gia các hoạt động content cùng Guild và đồng hành lâu dài cùng TNC</strong> trên những chặng đường phát triển sắp tới.
+            </p>
+          </div>
+
           {/* Section 1 */}
           <div className="p-4 rounded-xl bg-[#0b0f19] border border-slate-800 space-y-2">
             <h4 className="font-bold text-amber-400 uppercase text-xs flex items-center gap-1.5">

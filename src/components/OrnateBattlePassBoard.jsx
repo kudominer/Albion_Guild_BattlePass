@@ -60,7 +60,16 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
               SỔ TAY TU LUYỆN
             </h1>
           </div>
-          <p className="text-xs sm:text-sm text-amber-100/90 font-medium tracking-wide mt-1 drop-shadow px-2">
+          
+          {/* Slogan & Newbie Mission Statement */}
+          <div className="mt-2.5 max-w-2xl mx-auto px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-amber-500/25 to-amber-500/10 border border-amber-400/40 shadow-sm flex items-center justify-center gap-2">
+            <span className="text-sm">🛡️</span>
+            <p className="text-[11px] sm:text-xs text-amber-200 font-semibold tracking-wide drop-shadow">
+              Dành cho <strong>Newbie &lt; 100M Total Fame</strong> · Khích lệ tìm hiểu game, tham gia content & đồng hành cùng <strong>TNC</strong>!
+            </p>
+          </div>
+
+          <p className="text-[11px] sm:text-xs text-amber-100/80 font-medium tracking-wide mt-2 drop-shadow px-2">
             Hoàn thành nhiệm vụ — Nâng cấp Giao Kèo — Nhận phần thưởng giá trị
           </p>
         </div>

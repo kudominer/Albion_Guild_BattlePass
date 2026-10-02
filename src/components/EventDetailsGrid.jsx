@@ -28,7 +28,31 @@ export default function EventDetailsGrid({ onOpenRegister }) {
   return (
     <div className="space-y-8 my-8">
       
-      {/* SECTION 1: 3 SPECIAL PRIZES SHOWCASE PODIUM (Vinh Danh Giải Phụ) */}
+      {/* SECTION 1: EVENT MISSION & SPIRIT BANNER (Sứ Mệnh Khích Lệ Newbie) */}
+      <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-950/60 via-[#141d30] to-amber-950/60 border-2 border-amber-500/50 shadow-xl relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-700 p-0.5 shadow-gold-glow shrink-0 flex items-center justify-center">
+            <div className="w-full h-full bg-[#0d1322] rounded-[14px] flex items-center justify-center text-2xl">
+              🤝
+            </div>
+          </div>
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider font-game">
+                ✦ SỨ MỆNH SỰ KIỆN TỪ BAN TỔ CHỨC GUILD TNC
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40">
+                Newbie &lt; 100M Fame
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-amber-100 font-medium leading-relaxed">
+              Sự kiện được tổ chức nhằm <strong>khích lệ các anh em Newbie tìm hiểu sâu về game, tự tin tham gia mọi hoạt động content</strong> và <strong>đồng hành bền vững cùng TNC</strong> trên những chặng đường chinh phục lục địa Albion sắp tới!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION 2: 3 SPECIAL PRIZES SHOWCASE PODIUM (Vinh Danh Giải Phụ) */}
       <div>
         <div className="text-center max-w-2xl mx-auto mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
