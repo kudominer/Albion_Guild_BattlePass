@@ -20,7 +20,7 @@ export default function RulesModal({ isOpen, onClose }) {
         <div className="mb-5 pb-4 border-b border-slate-800">
           <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
             <Flame className="w-4 h-4 text-rose-400" />
-            THÔNG BÁO CHÍNH THỨC BTC GUILD TNC · [TNC] KUDO2TEN K2
+            THÔNG BÁO CHÍNH THỨC TỪ BAN TỔ CHỨC GUILD TNC
           </div>
           <h3 className="text-xl sm:text-2xl font-game font-bold text-white mt-1">
             THỂ LỆ EVENT ZERO TO HERO CÀY FAME (TỔNG GIẢI 600M+ SILVER)

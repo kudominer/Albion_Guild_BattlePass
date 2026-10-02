@@ -52,7 +52,7 @@ Tag duyệt: <@778593128566882314>`;
         <div className="p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs flex items-start gap-2.5 mb-4 leading-relaxed">
           <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           <div>
-            <strong>Thời gian đăng ký:</strong> Đến hết ngày <strong>04/10/2026</strong>. Dành riêng cho Newbie có <strong>Total Fame dưới 100M</strong>. Người duyệt bài: <strong>[TNC] Kudo2ten k2</strong>.
+            <strong>Thời gian đăng ký:</strong> Đến hết ngày <strong>04/10/2026</strong>. Dành riêng cho Newbie có <strong>Total Fame dưới 100M</strong>. Người duyệt bài: <strong>[TNC] Kudo2ten k2 (Ban Tổ Chức Guild TNC)</strong>.
           </div>
         </div>
 

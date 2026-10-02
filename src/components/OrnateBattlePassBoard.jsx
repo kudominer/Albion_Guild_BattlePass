@@ -28,7 +28,7 @@ export default function OrnateBattlePassBoard({ onOpenRegister, onOpenRules }) {
           </div>
           <div>
             <div className="font-game text-sm font-black tracking-widest text-amber-300">ALBION ONLINE</div>
-            <div className="text-[10px] font-semibold text-slate-400 uppercase">TNC GUILD · BTC [TNC] KUDO2TEN K2</div>
+            <div className="text-[10px] font-semibold text-slate-400 uppercase">TNC GUILD · BAN TỔ CHỨC GUILD TNC</div>
           </div>
         </div>
 

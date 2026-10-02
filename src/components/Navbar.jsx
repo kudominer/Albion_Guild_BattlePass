@@ -37,7 +37,7 @@ export default function Navbar({ onOpenRegister, onOpenRules }) {
                   Guild TNC
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Sự kiện Cày Fame 600M+ Silver · BTC [TNC] Kudo2ten k2</p>
+              <p className="text-[11px] text-slate-400 font-medium hidden sm:block">Sự kiện Cày Fame 600M+ Silver · Ban Tổ Chức Guild TNC</p>
             </div>
           </div>
 
