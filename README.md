@@ -4,6 +4,48 @@
 
 ---
 
+## 🌐 Hướng Dẫn Deploy Lên GitHub Pages (Tự Động 100%)
+
+Dự án đã được thiết lập sẵn **GitHub Actions CI/CD** tại `.github/workflows/deploy.yml`. Bạn chỉ cần làm theo 3 bước:
+
+1. **Tạo Repository mới trên GitHub:**
+   - Vào [GitHub](https://github.com/new) tạo một repo mới (ví dụ đặt tên: `Albion_Guild_BattlePass`).
+2. **Đẩy mã nguồn từ máy lên GitHub:**
+   ```bash
+   cd c:\Users\User\Documents\CODE\Albion_Guild_BattlePass
+   git remote add origin https://github.com/<tên-github-của-bạn>/Albion_Guild_BattlePass.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. **Bật GitHub Pages trong Settings:**
+   - Vào tab **Settings** của repository trên GitHub.
+   - Chọn mục **Pages** ở cột menu bên trái.
+   - Tại phần **Build and deployment** -> **Source**: Chọn **`GitHub Actions`**.
+
+👉 Sau khoảng 30 giây, website sẽ tự động online tại:
+`https://<tên-github-của-bạn>.github.io/Albion_Guild_BattlePass/`
+
+Mỗi lần bạn chỉnh sửa code và `git push`, GitHub sẽ tự động cập nhật phiên bản mới nhất!
+
+---
+
+## 🚀 Hướng Dẫn Chạy Cục Bộ (Local Development)
+
+```bash
+# Di chuyển vào thư mục dự án
+cd Albion_Guild_BattlePass
+
+# Cài đặt thư viện
+npm install
+
+# Khởi động môi trường phát triển
+npm run dev
+```
+
+Mở trình duyệt tại: `http://localhost:5173`
+
+---
+
 ## 🌟 Tính Năng Nổi Bật
 
 1. **Hệ thống Battle Pass (Thang chuẩn 0 - 100 Điểm):**
@@ -24,43 +66,6 @@
    - Kiểm tra điều kiện Newbie (<100M Total Fame).
    - Xem và duyệt 3 ảnh minh chứng (Stat Fame, Destiny Board vũ khí, Spec quần áo).
    - Quản lý trạng thái Duyệt / Từ chối và tổng ngân sách chi trả của Guild.
-
----
-
-## 🚀 Hướng Dẫn Chạy Cục Bộ (Local Development)
-
-```bash
-# Di chuyển vào thư mục dự án
-cd Albion_Guild_BattlePass
-
-# Cài đặt thư viện
-npm install
-
-# Khởi động môi trường phát triển
-npm run dev
-```
-
-Mở trình duyệt tại đường dẫn: `http://localhost:5173`
-
----
-
-## 🌐 Hướng Dẫn Deploy Lên Vercel / Netlify (1 Click)
-
-### 1. Deploy lên Vercel
-1. Đẩy mã nguồn lên GitHub của bạn:
-   ```bash
-   git init
-   git add .
-   git commit -m "khởi_tạo: web battle pass guild tnc"
-   git remote add origin https://github.com/<your-username>/Albion_Guild_BattlePass.git
-   git push -u origin main
-   ```
-2. Truy cập [Vercel](https://vercel.com) -> Chọn **Add New Project** -> Chọn repository `Albion_Guild_BattlePass`.
-3. Nhấn **Deploy** (Vercel sẽ tự động nhận diện Vite và build ra trang web hoạt động 24/7).
-
-### 2. Deploy lên Netlify
-- Build thư mục `dist/` bằng lệnh `npm run build`.
-- Kéo thả thư mục `dist/` vào [Netlify Drop](https://app.netlify.com/drop) hoặc kết nối qua GitHub repository.
 
 ---
 

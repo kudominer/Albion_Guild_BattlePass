@@ -10,7 +10,7 @@
   - Tích hợp hệ số nhân ưu đãi x1.2 (Heal) và x1.1 (Tank/Arcane), tự động tính số Silver thực nhận.
   - Thiết kế bảng xếp hạng Leaderboard với bục vinh danh giải phụ (Shadowcaller 5.4, Vũ khí 8.3, 5M nhánh).
   - Xây dựng Cổng Quản Trị Officer để BQT duyệt 3 ảnh minh chứng stat ban đầu.
-  - Viết đầy đủ tài liệu hướng dẫn deploy Vercel và Netlify.
+  - Cấu hình tự động hóa GitHub Actions CI/CD (`.github/workflows/deploy.yml`) và thiết lập `base: './'` trong `vite.config.js` để triển khai GitHub Pages 1-click tự động.
 - **Kết quả:** Build thành công 100% không lỗi cú pháp, ứng dụng chạy cực nhẹ và mượt mà trên cả PC và thiết bị di động.
 
 ---
@@ -19,16 +19,15 @@
 
 1. **Tình trạng hiện tại của dự án:**
    - Dự án đã hoàn thiện toàn bộ mã nguồn tại thư mục `Albion_Guild_BattlePass`.
+   - Đã cấu hình xong GitHub Actions workflow deploy GitHub Pages tại `.github/workflows/deploy.yml`.
    - Các tính năng Spec Tracker, Battle Pass Progress, Leaderboard, Officer Portal, Register Modal, Rules Modal hoạt động hoàn hảo.
-   - Bản build sản xuất (`npm run build`) đã được kiểm thử và tạo ra thư mục `dist/` sẵn sàng deploy lên Vercel/Netlify.
+   - Bản build sản xuất (`npm run build`) tương thích hoàn toàn với đường dẫn tương đối `./` trên GitHub Pages.
 
 2. **Bối cảnh và dự định kế tiếp của user:**
-   - User có thể kết nối thêm Discord Webhook để bot tự động gửi thông báo chúc mừng vào kênh Discord Guild TNC mỗi khi có người đạt mốc 80đ hoặc 100đ sớm nhất.
-   - User có thể đẩy mã nguồn lên GitHub repo cá nhân và bấm 1-click deploy lên Vercel/Netlify để gửi link cho toàn bộ anh em trong Guild.
+   - User chỉ cần tạo repo trên GitHub và push mã nguồn lên là GitHub Pages sẽ tự động kích hoạt và phát hành trang web.
 
 3. **Hướng dẫn kỹ thuật nhanh cho Agent tiếp theo:**
    - Thư mục dự án: `c:\Users\User\Documents\CODE\Albion_Guild_BattlePass`.
    - Chạy dev server: `cd Albion_Guild_BattlePass && npm run dev`.
    - Build production: `npm run build`.
-   - File cấu hình tính điểm: `src/data/weapons.js`.
-   - State & Auth: `src/context/AuthContext.jsx`.
+   - File cấu hình GitHub Actions: `.github/workflows/deploy.yml`.
