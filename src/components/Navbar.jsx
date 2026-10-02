@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Shield, Sparkles, Trophy, UserCheck, BookOpen, Clock, LogIn, ChevronDown, CheckCircle } from 'lucide-react';
+import { Shield, Sparkles, Trophy, UserCheck, BookOpen, Clock, LogIn, ChevronDown, CheckCircle, Monitor, Film } from 'lucide-react';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenRegister, onOpenRules }) {
+export default function Navbar({ activeTab, setActiveTab, viewMode, setViewMode, onOpenRegister, onOpenRules }) {
   const { user, mockProfiles, switchUser, signInWithDiscord } = useAuth();
   const [profileDropdown, setProfileDropdown] = useState(false);
 
@@ -23,7 +23,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenRegister, onOpen
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#0a0e1a]/90 backdrop-blur-md border-b border-albion-border/60">
+    <header className="sticky top-0 z-40 bg-[#080c16]/95 backdrop-blur-md border-b border-albion-border/60 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -45,68 +45,92 @@ export default function Navbar({ activeTab, setActiveTab, onOpenRegister, onOpen
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#121829]/80 p-1.5 rounded-xl border border-albion-border/60">
-            <button
-              onClick={() => setActiveTab('tracker')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                activeTab === 'tracker'
-                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-              }`}
-            >
-              <Sparkles className="w-4 h-4" />
-              Battle Pass & Spec
-            </button>
+          {/* Navigation Links & View Mode Switcher */}
+          <div className="hidden md:flex items-center gap-3">
+            
+            {/* View Mode Toggle Switcher (Phương án 2 vs Phương án 3) */}
+            <div className="flex items-center bg-[#120c08] p-1 rounded-xl border border-amber-500/50 shadow-inner">
+              <button
+                onClick={() => setViewMode('showcase')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-game font-bold transition-all ${
+                  viewMode === 'showcase'
+                    ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 shadow-gold-glow'
+                    : 'text-amber-200/70 hover:text-white'
+                }`}
+                title="Chế độ Sổ Tay Hoàng Kim + Chi tiết bên dưới"
+              >
+                <Monitor className="w-3.5 h-3.5" />
+                <span>Sổ Tay Hoàng Kim</span>
+              </button>
 
-            <button
-              onClick={() => setActiveTab('leaderboard')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                activeTab === 'leaderboard'
-                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-              }`}
-            >
-              <Trophy className="w-4 h-4" />
-              Bảng Xếp Hạng
-            </button>
+              <button
+                onClick={() => setViewMode('cinematic')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-game font-bold transition-all ${
+                  viewMode === 'cinematic'
+                    ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 shadow-gold-glow'
+                    : 'text-amber-200/70 hover:text-white'
+                }`}
+                title="Chế độ Toàn Cảnh Cinematic Game HUD"
+              >
+                <Film className="w-3.5 h-3.5" />
+                <span>Toàn Cảnh Cinematic</span>
+              </button>
+            </div>
 
-            <button
-              onClick={() => setActiveTab('officer')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                activeTab === 'officer'
-                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-              }`}
-            >
-              <UserCheck className="w-4 h-4" />
-              BQT Officer
-              {user?.is_officer && (
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              )}
-            </button>
+            {/* Standard Nav Links for Showcase Mode */}
+            {viewMode === 'showcase' && (
+              <nav className="flex items-center gap-1 bg-[#121829]/80 p-1.5 rounded-xl border border-albion-border/60">
+                <button
+                  onClick={() => setActiveTab('tracker')}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    activeTab === 'tracker'
+                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  }`}
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Spec & Thưởng
+                </button>
 
-            <button
-              onClick={onOpenRules}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-amber-300 hover:bg-slate-800/60 transition-all"
-            >
-              <BookOpen className="w-4 h-4" />
-              Thể Lệ
-            </button>
-          </nav>
+                <button
+                  onClick={() => setActiveTab('leaderboard')}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    activeTab === 'leaderboard'
+                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  }`}
+                >
+                  <Trophy className="w-3.5 h-3.5" />
+                  Xếp Hạng
+                </button>
+
+                <button
+                  onClick={() => setActiveTab('officer')}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    activeTab === 'officer'
+                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  }`}
+                >
+                  <UserCheck className="w-3.5 h-3.5" />
+                  BQT
+                </button>
+
+                <button
+                  onClick={onOpenRules}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-amber-300 hover:bg-slate-800/60 transition-all"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Thể Lệ
+                </button>
+              </nav>
+            )}
+
+          </div>
 
           {/* Countdown & Profile / Auth */}
           <div className="flex items-center gap-3">
             
-            {/* Event Countdown */}
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-xs">
-              <Clock className="w-4 h-4 text-amber-400 animate-pulse" />
-              <span className="text-amber-200/80">Kết thúc sau:</span>
-              <span className="font-mono font-bold text-albion-gold">
-                {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
-              </span>
-            </div>
-
             {/* User Account / Role Switcher */}
             {user ? (
               <div className="relative">
@@ -141,7 +165,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenRegister, onOpen
                     </div>
 
                     <div className="my-2">
-                      <p className="px-3 py-1 text-[10px] font-semibold text-slate-400 uppercase">Chuyển tài khoản thử nghiệm (Demo):</p>
+                      <p className="px-3 py-1 text-[10px] font-semibold text-slate-400 uppercase">Chuyển tài khoản (Demo):</p>
                       {mockProfiles.map(p => (
                         <button
                           key={p.id}
@@ -189,54 +213,33 @@ export default function Navbar({ activeTab, setActiveTab, onOpenRegister, onOpen
                   <LogIn className="w-4 h-4" />
                   Đăng nhập Discord
                 </button>
-                <button
-                  onClick={onOpenRegister}
-                  className="albion-btn-gold px-4 py-2 rounded-xl text-xs font-bold"
-                >
-                  Đăng Ký Tham Gia
-                </button>
               </div>
             )}
+
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Nav Bar */}
-      <div className="md:hidden flex items-center justify-around bg-[#0d1322] border-t border-slate-800 py-2.5 px-2 text-xs">
+      {/* Mobile View Mode Switcher */}
+      <div className="md:hidden flex items-center justify-around bg-[#0d1322] border-t border-slate-800 py-2 px-2 text-xs">
         <button
-          onClick={() => setActiveTab('tracker')}
-          className={`flex flex-col items-center gap-1 font-semibold ${
-            activeTab === 'tracker' ? 'text-albion-gold' : 'text-slate-400'
+          onClick={() => setViewMode('showcase')}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold ${
+            viewMode === 'showcase' ? 'bg-amber-500 text-slate-950' : 'text-slate-400'
           }`}
         >
-          <Sparkles className="w-4 h-4" />
-          <span>Battle Pass</span>
+          <Monitor className="w-3.5 h-3.5" />
+          <span>Sổ Tay Hoàng Kim</span>
         </button>
         <button
-          onClick={() => setActiveTab('leaderboard')}
-          className={`flex flex-col items-center gap-1 font-semibold ${
-            activeTab === 'leaderboard' ? 'text-albion-gold' : 'text-slate-400'
+          onClick={() => setViewMode('cinematic')}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold ${
+            viewMode === 'cinematic' ? 'bg-amber-500 text-slate-950' : 'text-slate-400'
           }`}
         >
-          <Trophy className="w-4 h-4" />
-          <span>Xếp Hạng</span>
-        </button>
-        <button
-          onClick={() => setActiveTab('officer')}
-          className={`flex flex-col items-center gap-1 font-semibold ${
-            activeTab === 'officer' ? 'text-purple-400' : 'text-slate-400'
-          }`}
-        >
-          <UserCheck className="w-4 h-4" />
-          <span>BQT Officer</span>
-        </button>
-        <button
-          onClick={onOpenRules}
-          className="flex flex-col items-center gap-1 font-medium text-slate-400"
-        >
-          <BookOpen className="w-4 h-4" />
-          <span>Thể Lệ</span>
+          <Film className="w-3.5 h-3.5" />
+          <span>Cinematic HUD</span>
         </button>
       </div>
     </header>

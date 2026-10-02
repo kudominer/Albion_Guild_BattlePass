@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import OrnateBattlePassBoard from './components/OrnateBattlePassBoard';
+import CinematicHud from './components/CinematicHud';
 import PrizePoolBanner from './components/PrizePoolBanner';
 import BattlePassTrack from './components/BattlePassTrack';
 import SpecCalculator from './components/SpecCalculator';
@@ -13,6 +15,7 @@ import { Shield, Sparkles, Trophy, BookOpen, UserCheck, Heart } from 'lucide-rea
 
 function MainContent() {
   const { user } = useAuth();
+  const [viewMode, setViewMode] = useState('showcase'); // 'showcase' (Phương án 2) | 'cinematic' (Phương án 3)
   const [activeTab, setActiveTab] = useState('tracker'); // 'tracker' | 'leaderboard' | 'officer'
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isRulesOpen, setIsRulesOpen] = useState(false);
@@ -28,48 +31,62 @@ function MainContent() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <div>
-        {/* Navigation Bar */}
+        {/* Navigation Bar with View Mode Toggle Switcher */}
         <Navbar
           activeTab={activeTab}
           setActiveTab={setActiveTab}
+          viewMode={viewMode}
+          setViewMode={setViewMode}
           onOpenRegister={() => setIsRegisterOpen(true)}
           onOpenRules={() => setIsRulesOpen(true)}
         />
 
-        {/* Main Body Container */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-          
-          {/* Hero Banner with 600M+ Prize Pool & Special Awards */}
-          <PrizePoolBanner
+        {/* --- VIEW MODE 1: CINEMATIC TOÀN CẢNH (PHƯƠNG ÁN 3) --- */}
+        {viewMode === 'cinematic' && (
+          <CinematicHud
             onOpenRegister={() => setIsRegisterOpen(true)}
             onOpenRules={() => setIsRulesOpen(true)}
           />
+        )}
 
-          {/* Personal Battle Pass Progression Visual Track */}
-          <BattlePassTrack
-            score={userScoreResult.totalPoints}
-            multiplier={userTree.multiplier || 1.0}
-            userTreeName={userTree.name}
-          />
-
-          {/* Active Tab View */}
-          {activeTab === 'tracker' && (
-            <SpecCalculator
-              userTreeId={user?.registered_tree_id}
-            />
-          )}
-
-          {activeTab === 'leaderboard' && (
-            <Leaderboard
+        {/* --- VIEW MODE 2: SỔ TAY HOÀNG KIM & CHI TIẾT (PHƯƠNG ÁN 2) --- */}
+        {viewMode === 'showcase' && (
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+            
+            {/* 1. Ornate Carved Wood Battle Pass Board (Theo ảnh thiết kế mẫu) */}
+            <OrnateBattlePassBoard
+              onOpenSpecDetail={() => setActiveTab('tracker')}
               onOpenRegister={() => setIsRegisterOpen(true)}
+              onUpgradeClick={() => setActiveTab('tracker')}
             />
-          )}
 
-          {activeTab === 'officer' && (
-            <OfficerPortal />
-          )}
+            {/* 2. Special Prizes & Guild Event Rules Banner */}
+            <PrizePoolBanner
+              onOpenRegister={() => setIsRegisterOpen(true)}
+              onOpenRules={() => setIsRulesOpen(true)}
+            />
 
-        </main>
+            {/* 3. Detailed Interactive Content View */}
+            <div className="mt-8">
+              {activeTab === 'tracker' && (
+                <SpecCalculator
+                  userTreeId={user?.registered_tree_id}
+                />
+              )}
+
+              {activeTab === 'leaderboard' && (
+                <Leaderboard
+                  onOpenRegister={() => setIsRegisterOpen(true)}
+                />
+              )}
+
+              {activeTab === 'officer' && (
+                <OfficerPortal />
+              )}
+            </div>
+
+          </main>
+        )}
       </div>
 
       {/* Modals */}
@@ -84,7 +101,7 @@ function MainContent() {
       />
 
       {/* Footer */}
-      <footer className="mt-16 border-t border-albion-border/60 bg-[#080c16] py-8 text-center text-xs text-slate-500">
+      <footer className="mt-16 border-t border-albion-border/60 bg-[#060911] py-8 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-albion-gold" />
